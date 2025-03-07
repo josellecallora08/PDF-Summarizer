@@ -16,7 +16,6 @@ app.use(cors());
 // Multer setup for file uploads
 const upload = multer({ storage: multer.memoryStorage() });
 
-// Endpoint to upload PDF and summarize
 app.post("/upload", upload.single("file"), async (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: "No file uploaded" });
