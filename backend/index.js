@@ -1,9 +1,10 @@
-const express = require("express");
-const multer = require("multer");
-const pdfParse = require("pdf-parse");
-const axios = require("axios");
-const cors = require("cors");
-require("dotenv").config();
+import express from "express";
+import multer from "multer";
+import pdfParse from "pdf-parse";
+import axios from "axios";
+import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -62,7 +63,7 @@ async function getSummaryFromGemini(text) {
           "Content-Type": "application/json",
         },
       }
-    );  
+    );
     return response.data.candidates[0].content.parts[0].text;
   } catch (error) {
     console.error("Gemini API Error:", error);
@@ -74,4 +75,4 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
 
-module.exports = app;
+export default app;
