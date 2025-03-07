@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/index.js"></script>
+    <title>PDF Summarizer - Soj</title>
+  </head>
+  <body>
+    <div class="body-container">
+      <header>
+        <h1>PDF Summarizer</h1>
+      </header>
+      <div class="body-content">
+        <div class="left-content">
+          <div class="left-content-container">
+            <div class="relative-container">
+              <input
+                type="file"
+                id="pdf-file"
+                accept="application/pdf"
+                hidden
+              />
+              <label id="drop-area" for="pdf-file" class="file-label">
+                <img
+                  src="./assets/file-arrow-up-solid.svg"
+                  alt=""
+                  height="80"
+                />
+              </label>
+            </div>
+            <div class="file-name">
+              <p class="file-title">File Name:</p>
+              <p id="file-name"></p>
+            </div>
+            <button id="generate-summary" class="generate-summary-btn">Generate Summary</button>
+          </div>
+        </div>
+        <div class="right-content">
+          <div class="right-content-container">
+            <div class="summary-container">
+              <div class="summary-header">
+                <h2>Summary</h2>
+                <button id="copy-btn" class="download-btn">
+                  Copy Summary
+                </button>
+              </div>
+              <div class="summary-content">
+                <textarea name="" id="pdf-summary-content" rows="25" disabled></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

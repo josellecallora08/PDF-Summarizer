@@ -1,0 +1,250 @@
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background-color: #f8f9fa;
+    color: #333;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Main Container - Uses 80% of Screen */
+  .body-container {
+    width: 80%;
+    max-width: 1400px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  /* Layout - Left 40% | Right 60% */
+  .body-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%;
+  }
+  
+  /* Left Panel (Upload) - Takes 40% */
+  .left-content {
+    width: 40%;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  /* Drag & Drop Upload Box */
+  .relative-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f8f9fa;
+    border: 2px dashed #007bff;
+    padding: 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+  }
+  
+  .relative-container:hover {
+    background: #eef5ff;
+    border-color: #0056b3;
+  }
+  
+  .file-label img {
+    height: 80px;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+  }
+  
+  .file-label:hover img {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  
+  /* File Name Display */
+  .file-name {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 15px;
+    word-break: break-word;
+    color: #333;
+  }
+  
+  /* Generate Summary Button */
+  .generate-summary-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .generate-summary-btn:hover {
+    background: linear-gradient(to right, #0056b3, #003f8a);
+    transform: scale(0.98);
+  }
+  
+  /* Right Panel (Summary) - Takes 60% */
+  .right-content {
+    width: 60%;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Summary Header */
+  .summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Copy Summary Button */
+  .download-btn {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Summary Content */
+  .summary-content textarea {
+    width: 100%;
+    height: 350px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    font-size: 1.1rem;
+    resize: none;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+  }
+  
+  .summary-content textarea:focus {
+    border-color: #007bff;
+    background: white;
+  }
+  
+  /* RESPONSIVE DESIGN */
+  
+  /* Medium Screens (Tablets) */
+  @media (max-width: 1024px) {
+    .body-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .left-content,
+    .right-content {
+      width: 100%;
+    }
+  
+    .generate-summary-btn {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  
+    .relative-container {
+      max-width: 100%;
+    }
+  
+    .summary-content textarea {
+      height: 300px;
+    }
+  }
+  
+  /* Small Screens (Mobile) */
+  @media (max-width: 768px) {
+    .body-container {
+      padding: 15px;
+      width: 95%;
+    }
+  
+    .body-content {
+      flex-direction: column;
+    }
+  
+    .left-content,
+    .right-content {
+      width: 100%;
+    }
+  
+    .relative-container {
+      padding: 25px;
+    }
+  
+    .summary-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .download-btn {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .generate-summary-btn {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  
+    .summary-content textarea {
+      height: 250px;
+    }
+  }
+  
